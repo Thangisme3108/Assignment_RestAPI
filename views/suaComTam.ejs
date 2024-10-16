@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sửa Cơm Tấm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+        }
+
+        form label {
+            margin-top: 10px;
+        }
+
+        form input {
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        button {
+            padding: 10px;
+            margin-top: 10px;
+            width: 100px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<h2>Sửa Cơm Tấm</h2>
+<form action="/suact/<%=comtam._id%>" method="POST"  enctype="application/x-www-form-urlencoded">
+    <label for="ten">Tên cơm tấm</label>
+    <input value="<%=comtam.tenMon%>" name="mon" type="text" id="ten" placeholder="Nhập tên món" required>
+
+    <label for="gia">Giá tiền</label>
+    <input value="<%=comtam.giaTien%>" name="price" type="number" id="gia" placeholder="Nhập giá tiền" required>
+
+    <button type="submit" value="submit" >Sửa</button>
+</form>
+
+
+</body>
+</html>

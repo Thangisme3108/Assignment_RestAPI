@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Thêm Món Cơm Tấm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+        }
+        label, input {
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Thêm món cơm tấm</h1>
+<form action="/themComTam" method="POST" enctype="application/x-www-form-urlencoded"
+      id="comTamForm">
+    <label for="ten">Tên:</label>
+    <input type="text" id="ten" name="mon" placeholder="Nhập tên món" required>
+
+    <label for="gia">Giá:</label>
+    <input type="number" id="gia" name="price" placeholder="Nhập giá món" required>
+
+    <button type="submit">Gửi</button>
+</form>
+
+<div id="result" style="margin-top: 20px;"></div>
+
+<!--<script>-->
+<!--    document.getElementById('comTamForm').addEventListener('submit', function(event) {-->
+<!--        event.preventDefault(); // Ngăn chặn hành vi mặc định của form-->
+
+<!--        // Lấy dữ liệu từ form-->
+<!--        const ten = document.getElementById('ten').value;-->
+<!--        const gia = document.getElementById('gia').value;-->
+<!--        const anh = document.getElementById('anh').files[0];-->
+
+<!--        // Tạo URL cho ảnh-->
+<!--        const imgURL = URL.createObjectURL(anh);-->
+
+<!--        // Hiển thị kết quả-->
+<!--        const resultDiv = document.getElementById('result');-->
+<!--        resultDiv.innerHTML = `-->
+<!--            <h2>Thông Tin Đặt Cơm Tấm</h2>-->
+<!--            <p>Tên: ${ten}</p>-->
+<!--            <p>Giá: ${gia} VNĐ</p>-->
+<!--            <img src="${imgURL}" alt="Ảnh Cơm Tấm">-->
+<!--        `;-->
+<!--    });-->
+<!--</script>-->
+
+</body>
+</html>

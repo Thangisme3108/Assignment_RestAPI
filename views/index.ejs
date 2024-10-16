@@ -3,6 +3,26 @@
 <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        button {
+            padding: 5px 10px;
+            margin: 2px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -11,9 +31,29 @@
             <a href="/chonComTam">Chọn cơm tấm</a>
             <a href="/datComTam">Đặt cơm tấm</a>
             <a href="/chiTietDonHang">Chi tiết đơn hàng</a>
+            <a href="/themComTam/">Thêm cơm tấm</a>
         </div>
     </header>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <table>
+        <thead>
+            <tr>
+                <th>Tên món</th>
+                <th>Giá món</th>
+                <th>Chức năng</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% comtams.forEach(function (comtam){%>
+            <tr>
+                <td><%= comtam.tenMon%></td>
+                <td><%= comtam.giaTien%></td>
+                <td>
+                    <a href="/sua/<%= comtam._id%>"><button>Sửa</button></a>
+                    <a href="/xoa/<%= comtam._id%>"><button>Xóa</button></a>
+                </td>
+            </tr>
+        <% })%>
+        </tbody>
+    </table>
 </body>
 </html>
