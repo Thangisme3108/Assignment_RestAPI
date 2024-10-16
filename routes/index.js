@@ -32,7 +32,7 @@ router.get('/', function (req, res, next) {
 
     const ComTam = mongoose.model("ComTam", ComTamSchema);
 
-    router.post('/chonComTam', function (req, res, next) {
+    router.post('/chonComTam', function (req, res) {
         const tenMon = req.body.mon;
         const giaTien = req.body.price;
         // const soLuong = req.body.soLuong;
