@@ -16,7 +16,7 @@ connect(mongoURI, {
 }));
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
+router.get('/', function (req, res) {
     ComTam.find({}).then((comtams) => {
         res.render('index',  {title: 'Danh sách các món cơm tấm', comtams: comtams});
     })
@@ -48,7 +48,7 @@ router.get('/', function (req, res, next) {
         }))
     })
 
-    router.get('/them', function (req, res, next) {
+    router.get('/them', function (req, res) {
         res.render('chonComTam')
     })
 
