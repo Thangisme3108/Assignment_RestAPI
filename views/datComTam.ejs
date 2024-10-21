@@ -1,11 +1,93 @@
-<!doctype html>
-<html lang="vi">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt Cơm Tấm</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h1>Đặt cơm tấm</h1>
+<div class="container">
+    <h1>Đặt Cơm Tấm</h1>
+
+    <form action="/datComTam" method="POST" enctype="application/x-www-form-urlencoded"
+          id="datComTamForm">
+        <label for="ten">Tên món: </label>
+        <select id="tenMon" name="tenMon">
+            <% comtams.forEach(function(comtam) { %>
+                <option value="<%= comtam.tenMon %>">
+                    <%= comtam.tenMon %> - <%= comtam.giaTien %> VNĐ
+                </option>
+                <% }); %>
+        </select> <br> <br>
+
+
+
+        <select id="tenMon" name="giaTien">
+            <% comtams.forEach(function(comtam) { %>
+                <option value="<%= comtam.giaTien %>">
+                    <%= comtam.giaTien %> VNĐ
+                </option>
+            <% }); %>
+        </select>
+
+        <label for="soLuong">Số lượng: </label>
+        <input type="number" id="sl" name="soLuong" placeholder="Nhập số lượng" required>
+
+        <button type="submit">Đặt Món</button>
+
+    </form>
+
+</div>
+
+<!--<script src="script.js"></script>-->
 </body>
 </html>
